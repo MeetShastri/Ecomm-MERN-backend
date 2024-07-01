@@ -1,15 +1,13 @@
-import userModel from "../model/userModel.js";
+import productModel from "../../model/productModel.js";
 
-export const userDetails = async(req, res)  =>  {
+export const getProducts = async (req, res) => {
     try {
-        console.log("req.user", req.user._id);
-        console.log(req.user._id);
-        const user = await userModel.findById(req.user._id);
+        const products = await productModel.find().sort({createdAt: -1})
         return res.status(200).json(
             { 
-                message: "User details fetched successfully", 
-                data: user,
+                message: "Products fetched successfully", 
                 success: true,
+                data: products,
                 error: false
             })
     } catch (error) {
