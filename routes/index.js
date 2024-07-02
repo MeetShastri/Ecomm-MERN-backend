@@ -12,6 +12,7 @@ import { uploadProduct } from '../controller/product/uploadProduct.js';
 import { getProducts } from '../controller/product/getProducts.js';
 import { updateProduct } from '../controller/product/updateProduct.js';
 import { getCategoryProduct } from '../controller/product/getCategoryProduct.js';
+import { getCategoryWiseProduct } from '../controller/product/getCategoryWiseProduct.js';
 router.post('/signup', userSignUp)
 router.post('/signin', userSignIn)
 router.get('/getuser', authToken, userDetails)
@@ -25,4 +26,5 @@ router.get('/getproducts', getProducts)
 router.post('/updateproduct', authToken, updateProduct)
 
 router.get('/getcategoryproduct', getCategoryProduct)
+router.get('/getcategorywiseproduct', getCategoryWiseProduct)
 export default router
